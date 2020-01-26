@@ -1,0 +1,169 @@
+<div> 
+    <div class="main-content">
+    <div class="container-fluid">
+    <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title">Staff Information</h4>
+                        <p class="card-category">Fill in information</p>
+                    </div>
+
+                        <div class="card-body">
+                        <form>
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="First Name *" [(ngModel)]="staffInformation.firstName" [ngModelOptions]="{standalone: true}" >
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Middle Name" [(ngModel)]="staffInformation.middleName" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Last Name *" [(ngModel)]="staffInformation.lastName" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Guardian Name *" type="text" [(ngModel)]="staffInformation.guardian" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Nationality" type="text" [(ngModel)]="staffInformation.country" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <mat-form-field class="mat">
+                                            <mat-select placeholder="Gender *"  #branch [(ngModel)]="staffInformation.gender" [ngModelOptions]="{standalone: true}">
+                                            <mat-option *ngFor="let gender of genderTypes" [value]="gender"> {{gender}}</mat-option>
+                                            </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Staff Id / License *" type="text" [(ngModel)]="staffInformation.identification" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Role ( Doctor etc... ) *" type="text" [(ngModel)]="staffInformation.role" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Place of stay" type="text" [(ngModel)]="staffInformation.location" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Phone Number *" type="text" [(ngModel)]="staffInformation.phone" [ngModelOptions]="{standalone: true}"> 
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <mat-form-field>
+                                        <input matInput [matDatepicker]="startedpicker" placeholder="Date of birth *" [(ngModel)]="staffInformation.dateOfBirth" [ngModelOptions]="{standalone: true}">
+                                        <mat-datepicker-toggle matSuffix [for]="startedpicker"></mat-datepicker-toggle>
+                                        <mat-datepicker #startedpicker></mat-datepicker>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Email address" type="email" [(ngModel)]="staffInformation.email" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                </div>
+
+                            </div>
+    
+
+                            <div class="row">
+                                
+                                <div class="col-md-4">
+
+                                    <mat-form-field>
+                                        <input matInput [matDatepicker]="picker" placeholder="Working since*" [(ngModel)]="staffInformation.workingSince" [ngModelOptions]="{standalone: true}">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <mat-form-field>
+                                        <input matInput [matDatepicker]="endedpicker" placeholder="Work ended" [(ngModel)]="staffInformation.workingEnded" [ngModelOptions]="{standalone: true}">
+                                        <mat-datepicker-toggle matSuffix [for]="endedpicker"></mat-datepicker-toggle>
+                                        <mat-datepicker #endedpicker></mat-datepicker>
+                                    </mat-form-field>
+
+                                </div>
+                               
+                                <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Profile Picture" type="text" [(ngModel)]="staffInformation.profilePicture" [ngModelOptions]="{standalone: true}"> 
+                                        </mat-form-field>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Carricullum Vitae" type="text" [(ngModel)]="staffInformation.cv" [ngModelOptions]="{standalone: true}"> 
+                                        </mat-form-field>
+    
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-12">
+                            <button mat-raised-button type="submit" class="btn btn-success pull-right" (click)="sendThisInformation()">Add Patient</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+</div>

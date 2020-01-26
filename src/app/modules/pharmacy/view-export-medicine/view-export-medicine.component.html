@@ -1,0 +1,70 @@
+    
+        <div class="row">
+
+
+      <!-- start of analytics -->
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+
+                            <div style="text-align:center">
+                                    <h4 class="card-title">Medicine sales Stats</h4>
+                                    <p class="card-category">Current Inventory medicine collection</p>
+
+                                    <button class="btn btn-primary" (click)="addANewMedicine()" > Add a new medicine <i class="fa fa-plus"></i> </button>
+                            </div>
+                    
+                            <br>
+
+                        <div class="flexThis">
+
+                            <div style="text-align:center">
+                                <button mat-raised-button type="submit" class="btn btn-warning">Export to PDF <i class="fa fa-file-pdf-o"></i> </button>
+                                <button mat-raised-button type="submit" class="btn btn-danger">Export to CSV <i class="fa fa-file-excel-o"></i> </button>
+                                <button mat-raised-button type="submit" class="btn btn-primary">Export to EXCEL <i class="fa fa-file-excel-o"></i> </button>
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-warning">
+
+                                <th>Medicine Name</th>
+                                <th>Selling price</th>
+                                <th>Manufactured by</th>
+                                <th>Sold</th>
+
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let medicine of allMedicines; let i = index">
+
+                                    <td> {{medicine.medicineName}} </td>
+                                    <td> {{medicine.currency}} {{medicine.sellingPrice}} </td>
+                                    <td> {{medicine.manufacturedBy}} </td>
+                                    <td>
+                                         <!-- {{medicine.soldOrNot}} -->
+                                          <mat-checkbox>Yes</mat-checkbox>    
+                                          <mat-checkbox>No</mat-checkbox>    
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <mat-paginator [length]="100"
+                        [pageSize]="10"
+                        [pageSizeOptions]="[5, 10, 25, 100]">
+                          </mat-paginator>
+
+                    </div>
+                </div>
+            </div>
+        <!-- end of analytics -->
+
+    </div>

@@ -1,0 +1,106 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats pointer" routerLink="add-staff" (click)="showAddStaffScreen()">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">create</i>
+                        </div>
+                        <p class="card-category">Record Staff</p>
+                       
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">warning</i>
+                            Record Staff Information...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats pointer" routerLink="staff-details" (click)="showStaffDetailsScreen()">
+                        <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">search</i>
+                        </div>
+                        <p class="card-category">Search Staff</p>
+                       
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> 
+                            Search for Staff
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats pointer" routerLink="all-staff-details" (click)="showAllStaffDetailsScreen()">
+                            <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">image_search</i>
+                        </div>
+
+                        <p class="card-category">All Staff</p>
+                       
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> 
+                            View all Staff Information
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats pointer" routerLink="export-staff-details" (click)="showExportStaffDetailsScreen()">
+                            <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">import_export</i>
+                        </div>
+
+                        <p class="card-category">Export Data</p>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> 
+                            Export all Staff Information
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div #patientComponents class="col-lg-12 col-md-12 col-sm-12" >
+
+                <div *ngIf="showAddStaff"  >
+                        <app-add-staff></app-add-staff>
+                </div>
+        
+                <div *ngIf="showStaffDetails" >
+                        <app-staff-details></app-staff-details>
+                </div>
+
+                <div *ngIf="showAllStaffDetails" >
+                        <app-all-staff></app-all-staff>
+                </div>
+
+                <div *ngIf="showExportstaffData" >
+                        <app-export-staff-data></app-export-staff-data>
+                </div>
+        </div>
+       
+
+    </div>
+</div>

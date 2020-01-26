@@ -1,0 +1,64 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-success">
+
+            <div style="text-align:center">
+                <h4 class="card-title " (click)="exportAsExcelCsv()">All Patients List</h4>
+                <p class="card-category"> Export all patients data as <i class="fa fa-angle-down"></i> </p>
+            </div>
+
+            <br>
+
+            <div class="flexThis">
+
+              <div>
+                  <button mat-raised-button type="submit" class="btn btn-warning">Export to PDF <i class="fa fa-file-pdf-o"></i> </button>
+                  <button mat-raised-button type="submit" class="btn btn-danger">Export to CSV <i class="fa fa-file-excel-o"></i> </button>
+                  <button mat-raised-button type="submit" class="btn btn-primary">Export to EXCEL <i class="fa fa-file-excel-o"></i> </button>
+              </div>
+              
+            </div>
+          
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                <th> Name </th>
+                <th> Status </th>
+                <th> Gender </th>
+                <th> Phone </th>
+                <th> Registration Date </th>
+                <th> Location </th>
+                </thead>
+                <tbody>
+
+                <tr *ngFor="let allPatientDetail of allPatientDetails; let i = index">
+
+                  <td> {{allPatientDetail?.firstName}} {{allPatientDetail?.middleName}} {{allPatientDetail?.lastName}} </td>
+                  <td> {{allPatientDetail?.status}} </td>
+                  <td> {{allPatientDetail?.gender}} </td>
+                  <td> {{allPatientDetail?.phone}} </td>
+                  <td> {{allPatientDetail?.registrationDate.substring(0, 15)}} </td>
+                  <td> {{allPatientDetail?.location}} </td>
+                </tr>
+
+                </tbody>
+              </table>
+              <mat-paginator [length]="100"
+                             [pageSize]="10"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

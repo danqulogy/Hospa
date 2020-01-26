@@ -1,0 +1,79 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-8 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <p class="card-category">Update your  </p>
+                        <h3 class="card-title"> Login Information </h3>
+                    </div>
+
+                    <div class="card-body">
+
+                            <form style="padding: 10px">
+
+                                    <div class="row">
+            
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Name *" [(ngModel)]="userInformation.name" [ngModelOptions]="{standalone: true}" >
+                                            </mat-form-field>
+                                        </div>
+            
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email *" [(ngModel)]="userInformation.email" [ngModelOptions]="{standalone: true}" >
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="License / Unique Identification *" [(ngModel)]="userInformation.license" [ngModelOptions]="{standalone: true}" >
+                                                </mat-form-field>
+                                            </div>
+            
+                                        <div class="col-md-4">
+                                                    <mat-form-field class="mat">
+                                                            <mat-select placeholder="Role/Position *"  [(ngModel)]="userInformation.role" [ngModelOptions]="{standalone: true}">
+                                                                <mat-option *ngFor="let hospitalRole of hospitalRoles" [value]="hospitalRole.name"> {{hospitalRole.name}}</mat-option>
+                                                            </mat-select>
+                                                    </mat-form-field>
+                                        </div>
+
+
+                                    </div>
+            
+                                    <!-- <button class="btn btn-success btn-round" (click)="updateUserProfile(userInformation)" > Update <i class="fa fa-upload"></i> </button> -->
+
+                                </form>
+              
+            
+                    </div>
+
+                    <div class="card-footer">
+                         
+                    </div>
+
+                </div>
+            </div>
+          
+
+
+        
+        </div>
+
+
+      </div>
+  </div>
+  
+
+  <!-- 
+      setting will allow the user to update his/her information 
+      1. Personal Information // login details, name phone number email
+      2. 
+-->

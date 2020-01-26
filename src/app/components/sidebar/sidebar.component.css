@@ -1,0 +1,7 @@
+.navbar-nav, .nav-mobile-menu{
+    display: initial !important;
+}
+
+.dropdown-menu-right{
+    transform-origin: 100% 0;
+}

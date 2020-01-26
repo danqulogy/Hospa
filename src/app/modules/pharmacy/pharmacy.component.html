@@ -1,0 +1,116 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+
+            <div class="row col-lg-12 col-md-12 col-sm-12">
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats pointer" routerLink="medicine-statistics" (click)="showAllMedicineStatistics()">
+                                <div class="card-header card-header-danger card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">image_search</i>
+                                    </div>
+            
+                                    <p class="card-category"> Medicines Statistics </p>
+                                   
+            
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">local_offer</i> 
+                                        View all Medicine Statistics Information ( Sales etc. )
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card card-stats pointer" routerLink="add-medicine-parent" (click)="showAddMedicineParentScreen()">
+                            <div class="card-header card-header-warning card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">create</i>
+                                </div>
+                                <p class="card-category">Medicine Data Management</p>
+                               
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">warning</i>
+                                    Record/Delete/Update medicine Information...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card card-stats pointer" routerLink="view-export-medicine" (click)="showAllMedicineDetailsScreen()">
+                                <div class="card-header card-header-info card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">import_export</i>
+                            </div>
+    
+                            <p class="card-category">View/Export Medicine</p>
+    
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">update</i> 
+                                View/Export all Medicine Information
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            
+
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats pointer" routerLink="all-patient-details" (click)="showAllPatientDetailsScreen()">
+                                    <div class="card-header card-header-danger card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">image_search</i>
+                                </div>
+        
+                                <p class="card-category">All Medicines</p>
+                               
+        
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">local_offer</i> 
+                                    View all Medicine Information
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+        
+                 
+            </div>
+
+             <hr>
+
+        <div #patientComponents class="col-lg-12 col-md-12 col-sm-12" >
+            
+                <div  *ngIf="showMedicineStatistics" >
+                        <app-medicine-statistics></app-medicine-statistics>
+                </div>
+                
+                <div  *ngIf="showAddMedicineParent" >
+                        <app-add-medicine-parent></app-add-medicine-parent>
+                </div>
+                
+                <div *ngIf="showAllMedicineDetails" >
+                        <app-view-export-medicine></app-view-export-medicine>
+                </div>
+        </div>
+       
+
+        <!-- 
+        // export the medicine with table and export button
+        // add medicine - table with add button
+        // medicine statistics with charts indicating medicines in stock - weekly, monthly sales 
+        -->
+
+  </div>
+</div>
+

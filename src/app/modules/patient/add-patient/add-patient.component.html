@@ -1,0 +1,110 @@
+<div> 
+        <div class="main-content">
+        <div class="container-fluid">
+        <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header card-header-success">
+                            <h4 class="card-title">Patient Information</h4>
+                            <p class="card-category">Fill in information</p>
+                        </div>
+
+                            <div class="card-body">
+                            <form>
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="First Name *" [(ngModel)]="patientInformation.firstName" [ngModelOptions]="{standalone: true}" >
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Middle Name" [(ngModel)]="patientInformation.middleName" [ngModelOptions]="{standalone: true}">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Last Name *" [(ngModel)]="patientInformation.lastName" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Guardian Name" type="text" [(ngModel)]="patientInformation.guardian" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Patient Status *" type="text" [(ngModel)]="patientInformation.status" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <mat-form-field class="mat">
+                                                <mat-select placeholder="Gender *"  #branch [(ngModel)]="patientInformation.gender" [ngModelOptions]="{standalone: true}">
+                                                <mat-option *ngFor="let gender of genderTypes" [value]="gender"> {{gender}}</mat-option>
+                                                </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Place of stay *" type="text" [(ngModel)]="patientInformation.location" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Phone Number *" type="text" [(ngModel)]="patientInformation.phone" [ngModelOptions]="{standalone: true}"> 
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+
+                                        <mat-form-field>
+                                            <input matInput [matDatepicker]="picker" placeholder="Registration Date *" [(ngModel)]="patientInformation.registrationDate" [ngModelOptions]="{standalone: true}">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+
+                                </div>
+                            </div>
+        
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Email address" type="email" [(ngModel)]="patientInformation.email" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="More details about patient"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+
+
+                                <button mat-raised-button type="submit" class="btn btn-success pull-right" (click)="sendThisInformation()">Add Patient</button>
+                                <div class="clearfix"></div>
+                            </form>
+
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+</div>

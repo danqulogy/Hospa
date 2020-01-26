@@ -1,0 +1,73 @@
+
+                      <form style="padding: 10px">
+
+                          <div class="row">
+
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Medicine Name *" [(ngModel)]="medecineInformation.medicineName" [ngModelOptions]="{standalone: true}" >
+                                  </mat-form-field>
+                              </div>
+
+                              <div class="col-md-4">
+                                
+                                <mat-form-field class="mat">
+                                    <mat-select placeholder="Currency *"  #branch [(ngModel)]="medecineInformation.currency" [ngModelOptions]="{standalone: true}">
+                                    <mat-option *ngFor="let currency of currencies" [value]="currency.symbol"> {{currency.symbol}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                            </div>
+
+                              <div class="col-md-4">
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Selling Price *" [(ngModel)]="medecineInformation.sellingPrice" [ngModelOptions]="{standalone: true}">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+
+                          <div class="row">
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Manufactured By *" [(ngModel)]="medecineInformation.manufacturedBy" [ngModelOptions]="{standalone: true}" >
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="In Stock Quantity *" [(ngModel)]="medecineInformation.quantity" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Volume Number e.g 200ml etc *" [(ngModel)]="medecineInformation.volume" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                    <div class="col-md-4">
+
+                                        <mat-form-field>
+                                            <input matInput [matDatepicker]="picker" placeholder="Medicine Expiry Date *" [(ngModel)]="medecineInformation.expDate" [ngModelOptions]="{standalone: true}">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+
+                                    </div>
+                                
+                            </div>
+
+
+                            <!-- end of detail filling process -->
+                            <button mat-raised-button type="submit" class="btn btn pull-left" (click)="closeDialog()">Close X</button>
+                            <button mat-raised-button type="submit" class="btn btn-success pull-right" (click)="sendThisInformation()"> {{medicineAddition}} Medicine</button>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="clearEverything()">Clear</button>
+                            <div class="clearfix"></div>
+                      </form>
+    

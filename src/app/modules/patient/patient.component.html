@@ -1,0 +1,105 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats pointer" routerLink="add-patient" (click)="showAddPatientScreen()">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">create</i>
+                        </div>
+                        <p class="card-category">Record Patient</p>
+                       
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">warning</i>
+                            Record Patients Information...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats pointer" routerLink="patient-details" (click)="showPatientDetailsScreen()">
+                        <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">search</i>
+                        </div>
+                        <p class="card-category">Search Patient</p>
+                       
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> 
+                            Search for Patient
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats pointer" routerLink="all-patient-details" (click)="showAllPatientDetailsScreen()">
+                            <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">image_search</i>
+                        </div>
+
+                        <p class="card-category">All Patients</p>
+                       
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> 
+                            View all Patient Information
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats pointer" routerLink="export-patient-details" (click)="showExportPatientDetailsScreen()">
+                            <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">import_export</i>
+                        </div>
+
+                        <p class="card-category">Export Data</p>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> 
+                            Export all Patient Information
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div #patientComponents class="col-lg-12 col-md-12 col-sm-12" >
+                <div *ngIf="showAddPatient"  >
+                        <app-add-patient></app-add-patient>
+                </div>
+        
+                <div *ngIf="showPatientDetails" >
+                        <app-patient-details></app-patient-details>
+                </div>
+
+                <div *ngIf="showAllPatientDetails" >
+                        <app-all-patients></app-all-patients>
+                </div>
+
+                <div *ngIf="showExportPatientDetails" >
+                        <app-export-petients-data></app-export-petients-data>
+                </div>
+        </div>
+       
+
+    </div>
+</div>
