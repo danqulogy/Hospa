@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/Hospa-Made%20with%20angular%20%26%20node.js-green" />  
+
 ## Hospa Pharmacy Mangement System:
 A simple and lightweight pharmacy management system.
 
