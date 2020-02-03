@@ -12,6 +12,7 @@ const port    = process.env.PORT || 3000;
 // use cors to allow local api call
 app.use( cors() );
 
+// change this to your db_url, this is for demo purposes
 const onlineMlabServer = "mongodb://henry212:dWy6_3z4..@ds133041.mlab.com:33041/hospa";
 
 // connect to the mongodb instance
